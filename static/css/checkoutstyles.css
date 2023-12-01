@@ -37,12 +37,15 @@
 }
 
 .back-to-cart-btn {
-    background: none;
-    border: none;
-    color: #007bff;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #000;
     cursor: pointer;
-    padding: 10px 0;
-    text-align: left;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .order-summary h2 {

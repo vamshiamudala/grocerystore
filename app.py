@@ -14,13 +14,19 @@ app.secret_key = 'your_secret_key'  # Needed for session managementx``
 USERNAME = "vamshiroyal"
 PASSWORD = "Royal@1999"
 
+
+@app.route("/")
+def start():
+    return render_template('login.html')
+
 @app.route('/login', methods=['POST'])
 def login():
     username = request.form['username']
     password = request.form['password']
 
     if username == USERNAME and password == PASSWORD:
-        return render_template('camera.html')
+        items = get_product_items()
+        return render_template('mfa.html', items=items)
 
     else:
         return "Login Failed", 401
@@ -59,7 +65,7 @@ def get_product_items():
     return products
  
 
-@app.route('/')
+@app.route('/home')
 def home():
     items = get_product_items()  # This function call populates the items list
     return render_template('home.html', items=items)

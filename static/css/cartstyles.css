@@ -1,5 +1,5 @@
 #navbar {
-    background-color: white;
+    background-image: linear-gradient(to right, #e4f5e6, #acebbe);
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -11,6 +11,8 @@
 }
 
 .nav-logo {
+    text-decoration: none;
+    font-weight: bold;
     font-size: 24px;
     color: #333;
 }
@@ -88,27 +90,32 @@ body {
 }
 
 #checkout-btn {
-    background-color: #007bff; /* Blue color for the checkout button */
+    background-color: #45a049; /* Blue color for the checkout button */
     color: white;
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
     font-size: 1rem;
+    
+    border-radius: 20px;
 }
 
 /* Assuming a 'continue-shopping-btn' class for styling the 'Continue Shopping' link */
 .continue-shopping-btn {
-    text-decoration: none;
-    color: #007bff;
-    background: none;
-    border: none;
-    padding: 0.5rem 0;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #000;
     cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 
 #checkout-btn {
-    background-color: #007bff;
+    background-color: #45a049;
     color: white;
     padding: 0.5rem 1.5rem;
     border: none;
