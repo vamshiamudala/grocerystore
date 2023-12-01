@@ -1,0 +1,175 @@
+#navbar {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar:hover {
+    background-image: linear-gradient(to right, #e4f5e6, #acebbe);
+}
+
+.nav-logo {
+    font-size: 24px;
+    color: #333;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+}
+
+.nav-button {
+    padding: 5px 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50; /* A shade of green */
+    color: white;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #45a049; /* A darker shade of green */
+}
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#cart-container {
+    width: 80%;
+    margin: 2rem auto;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 1rem;
+}
+
+.continue-shopping-btn {
+    background: none;
+    border: 1px solid #000;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #f9f9f9;
+}
+
+.cart-summary p {
+    margin: 0;
+    font-size: 1.2rem; /* Adjust the font size as needed */
+}
+
+#checkout-btn {
+    background-color: #007bff; /* Blue color for the checkout button */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Assuming a 'continue-shopping-btn' class for styling the 'Continue Shopping' link */
+.continue-shopping-btn {
+    text-decoration: none;
+    color: #007bff;
+    background: none;
+    border: none;
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+
+
+#checkout-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cart-items {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: #FFF; /* Assuming a white background for each cart item */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* subtle shadow for each item */
+}
+
+.cart-item img {
+    width: 60px; /* Adjust the width as needed */
+    margin-right: 1rem;
+}
+
+.cart-item-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.cart-item-details h3 {
+    margin: 0;
+    font-size: 1rem; /* Adjust the font size as needed */
+}
+
+.cart-item-details .item-price {
+    margin: 0;
+    font-size: 1rem; /* Adjust the font size as needed */
+}
+
+/* .cart-item p {
+    margin: 0.25rem 0;
+} */
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-controls button {
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.quantity-controls input[type="number"] {
+    border: 1px solid #ccc;
+    width: 3rem; /* Fixed width for the quantity input */
+    text-align: center;
+    margin: 0 0.5rem;
+}
+
+.cart-item-details .item-total {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1rem; /* Adjust the font size as needed */
+}
+
+/* You might need to add more styles for other elements */

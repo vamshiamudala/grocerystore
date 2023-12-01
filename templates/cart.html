@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="/static/css/cartstyles.css">
+    <!-- Include any other CSS files or frameworks you might be using -->
+</head>
+<body>
+    <nav id="navbar">
+        <a href="/" class="nav-logo">e-Commerce</a>
+        <div class="nav-items">
+            <div class="search-bar">
+                <input type="text" placeholder="Search products">
+                <!-- Insert search image here later -->
+            </div>
+            <button class="nav-button">Register</button>
+            <button class="nav-button">Login</button>
+        </div>
+    </nav>
+
+    <div id="cart-container">
+        <a href="/"><button class="continue-shopping-btn">← Continue Shopping</button></a>
+        <div class="cart-summary">
+            <p>Items: <span id="item-count">3</span></p>
+            <p>Total: <span id="total-price">$49.98</span></p>
+            <form action="{{ url_for('checkout') }}" method="get">
+                <button type="submit" id="checkout-btn">Checkout</button>
+            </form>
+        </div>
+        {% for item in cart %}
+        <div class="cart-item">
+            <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.name }}">
+            <div class="cart-item-details">
+                <h3>{{ item.name }}</h3>
+                <p class="item-price">{{ item.price }}</p>
+                <div class="quantity-controls">
+                    <button class="decrease-quantity" data-name="{{ item.name }}">-</button>
+                    <input type="number" class="item-quantity" value="1" min="1" data-name="{{ item.name }}">
+                    <button class="increase-quantity" data-name="{{ item.name }}">+</button>
+                </div>
+                <p class="item-total">{{ item.price }}</p>
+            </div>
+        </div>
+        {% else %}
+        <p>Your cart is empty.</p>
+        {% endfor %}
+    </div>
+
+    <script src="/static/main.js"></script>
+
+</body>
+</html>

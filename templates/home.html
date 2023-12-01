@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>e-Commerce Store</title>
+    <link rel="stylesheet" href="/static/css/homestyles.css">
+    <!-- Include any other CSS files or frameworks you might be using -->
+</head>
+<body>
+    <nav id="navbar">
+        <a href="/" class="nav-logo">e-Commerce</a>
+        <div class="nav-items">
+            <div class="search-bar">
+                <input type="text" placeholder="Search products">
+                <!-- Insert search image here later -->
+            </div>
+            <button class="nav-button">Register</button>
+            <button class="nav-button">Login</button>
+        </div>
+    </nav>
+
+    <div id="product-grid">
+        {% for item in items %}
+        <div class="product-item">
+            <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.name }}">
+            <h3>{{ item.name }}</h3>
+            <p>Price: {{ item.price }}</p>
+            <!-- Form for adding item to cart -->
+            <form action="{{ url_for('add_to_cart') }}" method="post">
+                <input type="hidden" name="name" value="{{ item.name }}">
+                <input type="hidden" name="price" value="{{ item.price }}">
+                <input type="hidden" name="image" value="{{ item.image }}">
+                <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+            </form>
+            <!-- <button class="add-to-cart-btn"
+                    data-name="{{ item.name }}"
+                    data-image="{{ url_for('static', filename=item.image) }}"
+                    data-price="{{ item.price }}">Add to Cart</button> -->
+            <button>View</button>
+        </div>
+        {% endfor %}
+    </div>
+    
+
+</body>
+</html>

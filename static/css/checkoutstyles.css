@@ -1,0 +1,71 @@
+/* styles.css - Add these styles to your existing stylesheet */
+
+#checkout-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.shipping-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.shipping-info input[type="text"],
+.shipping-info input[type="email"],
+.shipping-info textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+.shipping-info button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.order-summary {
+    width: 300px; /* Adjust the width as needed */
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.back-to-cart-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    padding: 10px 0;
+    text-align: left;
+}
+
+.order-summary h2 {
+    margin-bottom: 20px;
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.order-item img {
+    width: 50px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+.order-item p {
+    margin: 0;
+}
+
+.total-summary p {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Add additional styling as needed */
