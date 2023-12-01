@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Placed</title>
+</head>
+<body>
+    <h1>Order Placed Successfully</h1>
+    <p>Thank you for your order! Your payment was successful, and your order has been placed.</p>
+    
+    <!-- You can display order details or a summary here -->
+    
+    <p>Order ID: {{ order_id }}</p> <!-- If you have an order ID -->
+    
+    <!-- You can include additional details such as shipping information, estimated delivery date, etc. -->
+    
+    <p>Estimated Delivery Date: {{ estimated_delivery_date }}</p>
+    
+    <p>For any inquiries or assistance, please <a href="/contact">contact us</a>.</p>
+    
+    <!-- You can provide links to go back to the homepage or view the order history, as needed -->
+    <a href="/">Continue Shopping</a>
+    <a href="/order_history">View Order History</a>
+</body>
+</html>
