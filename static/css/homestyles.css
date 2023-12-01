@@ -72,10 +72,28 @@ body {
     height: auto;
 }
 
+.product-item button {
+    padding: 10px 20px;
+    border: 2px solid #45a049;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #45a049;
+    cursor: pointer;
+    font-weight: bold;
+    /* margin-left: 10px; */
+    transition: all 0.3s ease;
+}
+
+.product-item form {
+    display: inline-block;
+    margin-right: 20px;
+}
+
 h3 {
     color: #333; /* Or any shade of green you prefer */
 }
 
 p {
-    color: #27ae60; /* Or any shade of green you prefer */
+    font-weight: bold;
+    color: #000000; /* Or any shade of green you prefer */
 }

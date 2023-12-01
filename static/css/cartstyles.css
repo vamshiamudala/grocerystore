@@ -33,7 +33,16 @@
 .nav-button:hover {
     background-color: #45a049; /* A darker shade of green */
 }
+.search-bar input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
 
+.search-bar input[type="text"]::placeholder {
+    color: #999;
+}
 
 
 * {
@@ -128,7 +137,7 @@ body {
 
 .cart-item-details {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     flex-grow: 1;
 }
