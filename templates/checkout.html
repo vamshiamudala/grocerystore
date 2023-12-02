@@ -8,6 +8,7 @@
 <body>
     <div id="checkout-container">
         <div class="shipping-info">
+            <h2 class="shipping-heading">Shipping Details</h2>
             <form id="shipping-form" action="{{ url_for('process_checkout') }}" method="post">
                 <input type="text" placeholder="Name.." name="name" required>
                 <input type="email" placeholder="Email.." name="email" required>
@@ -19,7 +20,6 @@
                 <input type="text" placeholder="Country.." name="country" required>
                 <!-- Inside checkout.html -->
                 <form action="{{ url_for('process_checkout') }}" method="post">
-                    <!-- Shipping Information Fields -->
                     <button type="submit">Continue to Payment</button>
                 </form>
             </form>
@@ -42,53 +42,9 @@
                 <!-- Somewhere within the checkout.html -->
                 <p id="item-count">Items: {{ total_items }}</p>
                 <p id="total-price">Total: {{ total_price }}</p>
-
-                <!-- Stripe Payment Integration -->
-                <form id="payment-form">
-                    <!-- Display any payment errors -->
-                    <div id="card-errors" role="alert"></div>
-
-                    <!-- Add an empty div to hold the payment form -->
-                    <div id="card-element"></div>
-
-                    <!-- Submit button to complete the payment -->
-                    <button type="submit">Pay Now</button>
-                </form>
             </div>
         </div>
     </div>
-    <!-- Include Stripe.js -->
-    <script src="https://js.stripe.com/v3/"></script>
-
-    <script>
-        var stripe = Stripe('your_publishable_key'); // Replace with your Stripe publishable key
-
-        // Handle the submission of the payment form
-        var form = document.getElementById('payment-form');
-
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            stripe.confirmCardPayment(
-                '{{ clientSecret }}', // Replace with the client secret from your server
-                {
-                    payment_method: {
-                        card: cardElement, // This should be an instance of the Stripe.js CardElement
-                    },
-                }
-            ).then(function (result) {
-                if (result.error) {
-                    // Display error to your customer
-                    var errorElement = document.getElementById('card-errors');
-                    errorElement.textContent = result.error.message;
-                } else {
-                    // Payment succeeded, redirect or display a success message
-                    // You can use the result.paymentIntent to access payment details
-                    window.location.href = '/payment_completed?paymentId=' + result.paymentIntent.id;
-                }
-            });
-        });
-    </script>
-
+    
 </body>
 </html>

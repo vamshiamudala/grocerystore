@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grocery Store - MFA</title>
+    <title>Grocery Store</title>
+    <link rel="stylesheet" href="/static/css/mfastyles.css">
 </head>
 <body>
-    <header>
+    <header class="login-header">
         <nav>
             <div class="header">Grocery Store</div>
         </nav>
     </header>
-    <main>
+    <main class="margin-top20">
         <section class="mfa-container">
             <h2>Multi-Factor Authentication</h2>
             <form class="mfa-form" action="/otp_verification" method="post">
                 <label for="otp">Enter OTP</label>
                 <input type="text" id="otp" name="otp" required>
-              <!-- Inside the <form> tag, display the error message if it exists -->
-<p id="otp-error" style="color: red;">{{ error_message }}</p>
-
-
+                <!-- Inside the <form> tag, display the error message if it exists -->
+                <p id="otp-error" style="color: red;">{{ error_message }}</p>
                 <button type="submit">Verify OTP</button>
             </form>
             <form class="mfa-form" action="/resend_otp" method="post">

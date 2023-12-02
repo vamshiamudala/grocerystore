@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Billing Page</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" href="/static/css/teststyles.css">
+</head>
+<body>
+    <h1>Checkout</h1>
+    <form action="/charge" method="POST">
+        <label for="amount">Total:</label>
+        <!-- Use a <span> element to display the total price as plain text -->
+        <span id="total-price">{{ total_price }}</span><br>
+
+        <label for="card-element">
+            Credit or debit card
+        </label>
+        <div id="card-element">
+            <!-- A Stripe Element will be inserted here. -->
+        </div>
+
+        <!-- Used to display form errors. -->
+        <div id="card-errors" role="alert"></div>
+
+        <!-- Include the total price as a hidden input field for the server -->
+        <input type="hidden" name="amount" id="amount" value="{{ total_price_without_currency }}">
+        
+        <button type="submit">Pay</button>
+    </form>
+
+    <script>
+        var stripe = Stripe('pk_test_51OIS6hGfhJguOr7SxQtnATyTt7N6qSsqc53mEXKuPLjoiZ041UTe16tvN7zhqTORyiSmIpqNvOgD9ftxD2nk5GSa00vFdRrXcy'); // Replace with your Stripe publishable key
+        var elements = stripe.elements();
+
+        var card = elements.create('card');
+        card.mount('#card-element');
+
+        var form = document.querySelector('form');
+        var errorDiv = document.getElementById('card-errors');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            stripe.createToken(card).then(function(result) {
+                if (result.error) {
+                    // Show any errors that occur in the form.
+                    errorDiv.textContent = result.error.message;
+                } else {
+                    // Token represents a safe card token.
+                    var token = result.token.id;
+
+                    // Set the token in a hidden input field (if needed)
+                    var hiddenInput = document.createElement('input');
+                    hiddenInput.setAttribute('type', 'hidden');
+                    hiddenInput.setAttribute('name', 'token');
+                    hiddenInput.setAttribute('value', token);
+                    form.appendChild(hiddenInput);
+
+                    // Submit the form
+                    form.submit();
+                }
+            });
+        });
+        
+        // Extract numeric part of total_price and set it as the value of the hidden input
+        var total_price_element = document.getElementById('total-price');
+        var total_price = total_price_element.textContent.trim();
+        var total_price_without_currency = parseFloat(total_price.replace('$', ''));
+
+        // Set the numeric total price as the value of the hidden input
+        document.getElementById('amount').value = total_price_without_currency.toFixed(2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* Reset some default browser styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color for the entire page */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header */
+.login-header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.login-header .header {
+    font-size: 24px;
+}
+
+.margin-top20 {
+    margin-top: 50px;
+}
+
+/* Style the main section */
+main {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the Multi-Factor Authentication (MFA) section */
+.mfa-container {
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mfa-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style the MFA form */
+.mfa-form {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.mfa-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.mfa-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.mfa-form button[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.mfa-form button[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Style the error message */
+#otp-error {
+    color: red;
+    margin-top: 10px;
+}

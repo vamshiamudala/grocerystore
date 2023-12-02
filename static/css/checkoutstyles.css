@@ -30,11 +30,6 @@
     cursor: pointer;
 }
 
-.order-summary {
-    width: 300px; /* Adjust the width as needed */
-    border: 1px solid #ccc;
-    padding: 20px;
-}
 
 .back-to-cart-btn {
     padding: 10px 20px;
@@ -48,8 +43,31 @@
     text-decoration: none;
 }
 
-.order-summary h2 {
+
+
+
+.shipping-heading {
+    font-size: 24px;
+    font-weight: bold;
     margin-bottom: 20px;
+}
+
+/* Style the order summary */
+.order-summary {
+    width: 300px; /* Adjust the width as needed */
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px; /* Add border-radius */
+}
+
+.order-summary h2 {
+    font-size: 20px; /* Increase font size for the order summary title */
+    margin-bottom: 20px;
+}
+
+.order-items {
+    /* Increase font size for order items */
+    font-size: 16px;
 }
 
 .order-item {
@@ -67,9 +85,16 @@
     margin: 0;
 }
 
+.total-summary {
+    text-align: center;
+    margin-top: 20px;
+}
+
 .total-summary p {
+    font-size: 20px; /* Increase font size for the total */
     font-weight: bold;
     margin-top: 20px;
 }
 
 /* Add additional styling as needed */
+
